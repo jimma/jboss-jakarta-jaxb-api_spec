@@ -12,14 +12,15 @@
 -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>jakarta.xml.bind-api-parent</artifactId>
-        <groupId>jakarta.xml.bind</groupId>
-        <version>2.3.3</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>jakarta.xml.bind-api</artifactId>
+    <parent>
+        <groupId>org.jboss.spec.javax.xml.bind</groupId>
+        <artifactId>jboss-jaxb-api_2.3_spec-parent</artifactId>
+        <version>2.0.0.CR1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <groupId>org.jboss.spec.javax.xml.bind</groupId>
+    <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
     <packaging>jar</packaging>
     <name>Jakarta XML Binding API</name>
 
@@ -29,10 +30,10 @@
     </properties>
 
     <dependencies>
-        <dependency>
+        <!--dependency>
             <groupId>jakarta.activation</groupId>
             <artifactId>jakarta.activation-api</artifactId>
-        </dependency>
+        </dependency-->
     </dependencies>
 
     <build>
@@ -256,19 +257,17 @@ Use is subject to <a href="{@docRoot}/doc-files/speclicense.html" target="_top">
                     <execution>
                         <id>default-compile</id>
                         <configuration>
-                            <release>8</release>
                             <excludes>
                                 <exclude>module-info.java</exclude>
                             </excludes>
                         </configuration>
                     </execution>
-                    <execution>
+                    <!--execution>
                         <id>module-info-compile</id>
                         <goals>
                             <goal>compile</goal>
                         </goals>
                         <configuration>
-                            <release>9</release>
                             <includes>
                                 <include>module-info.java</include>
                             </includes>
@@ -280,13 +279,12 @@ Use is subject to <a href="{@docRoot}/doc-files/speclicense.html" target="_top">
                             <goal>compile</goal>
                         </goals>
                         <configuration>
-                            <release>9</release>
                             <compileSourceRoots>
                                 <compileSourceRoot>${project.basedir}/src/main/mr-jar</compileSourceRoot>
                             </compileSourceRoots>
                             <outputDirectory>${project.build.outputDirectory}/META-INF/versions/9</outputDirectory>
                         </configuration>
-                    </execution>
+                    </execution-->
                 </executions>
             </plugin>
             <plugin>
