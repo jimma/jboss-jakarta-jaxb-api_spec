@@ -28,7 +28,28 @@ class ServiceLoaderUtil {
 
     private static final String OSGI_SERVICE_LOADER_CLASS_NAME = "org.glassfish.hk2.osgiresourcelocator.ServiceLoader";
     private static final String OSGI_SERVICE_LOADER_METHOD_NAME = "lookupProviderClasses";
+    static <P, T extends Exception> P firstByServiceLoader(Class<P> spiClass,
+                                                           ClassLoader loader,
+                                                           Logger logger,
+                                                           ExceptionHandler<T> handler) throws T {
+        // service discovery
+        try {
+            ServiceLoader<P> serviceLoader = loader != null ? ServiceLoader.load(spiClass, loader) : ServiceLoader.load(spiClass);
 
+            for (P impl : serviceLoader) {
+                if (logger.isLoggable(Level.FINE))
+                {
+                    logger.fine(
+                          "ServiceProvider loading Facility used; returning object [" + impl.getClass().getName() + "]");
+                }
+
+                return impl;
+            }
+        } catch (Throwable t) {
+            throw handler.createException(t, "Error while searching for service [" + spiClass.getName() + "]");
+        }
+        return null;
+    }
     static <P, T extends Exception> P firstByServiceLoader(Class<P> spiClass,
                                                            Logger logger,
                                                            ExceptionHandler<T> handler) throws T {
