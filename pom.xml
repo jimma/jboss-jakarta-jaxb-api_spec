@@ -31,7 +31,7 @@
 
     <scm>
         <connection>scm:git:git://github.com/jboss/jboss-jakarta-jaxb-api_spec.git</connection>
-        <developerConnection>scm:git:git@github.com/jboss/jboss-jakarta-jaxb-api_spec.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:jboss/jboss-jakarta-jaxb-api_spec.git</developerConnection>
         <url>https://github.com/jboss/jboss-jakarta-jaxb-api_spec.git</url>
         <tag>HEAD</tag>
     </scm>
