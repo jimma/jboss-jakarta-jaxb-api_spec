@@ -114,7 +114,8 @@
                                 org.xml.sax.ext,
                                 org.xml.sax.helpers
                             </Import-Package>
-                            <Bundle-SymbolicName>${extension.name}-api</Bundle-SymbolicName>
+                            <!--Bundle-SymbolicName>${extension.name}-api</Bundle-SymbolicName-->
+                            <Bundle-SymbolicName>org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec</Bundle-SymbolicName>
                             <DynamicImport-Package>org.glassfish.hk2.osgiresourcelocator</DynamicImport-Package>
                             <Specification-Vendor>${vendor.name}</Specification-Vendor>
                             <Implementation-Build-Id>${scmBranch}-${buildNumber}, ${timestamp}</Implementation-Build-Id>
