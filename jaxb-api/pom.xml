@@ -182,6 +182,9 @@ Use is subject to <a href="{@docRoot}/doc-files/speclicense.html" target="_top">
                                 <head>Implementation Note:</head>
                             </tag>
                         </tags>
+                        <sourceFileExcludes>
+                               <sourceFileExclude>**/module-info.java</sourceFileExclude>
+                        </sourceFileExcludes>
                     </configuration>
                 </plugin>
             </plugins>
