@@ -77,14 +77,12 @@
         <spotbugs.skip>false</spotbugs.skip>
         <spotbugs.threshold>Low</spotbugs.threshold>
         <spotbugs.version>3.1.11</spotbugs.version>
-
         <release.spec.feedback>jaxb-dev@eclipse.org</release.spec.feedback>
         <release.spec.date>Jul 2017</release.spec.date>
         <api.package>javax.xml.bind</api.package>
         <extension.name>jakarta.xml.bind</extension.name>
         <spec.version>2.3</spec.version>
-        <impl.version>2</impl.version>
-        <activation.version>1.2.1</activation.version>
+        <impl.version>3</impl.version>
         <config.dir>${project.basedir}/etc/config</config.dir>
         <vendor.name>Oracle Corporation</vendor.name>
     </properties>

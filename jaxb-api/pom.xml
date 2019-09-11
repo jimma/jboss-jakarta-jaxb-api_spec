@@ -29,13 +29,6 @@
         <legal.doc.source>${project.basedir}/..</legal.doc.source>
     </properties>
 
-    <dependencies>
-        <!--dependency>
-            <groupId>jakarta.activation</groupId>
-            <artifactId>jakarta.activation-api</artifactId>
-        </dependency-->
-    </dependencies>
-
     <build>
 
         <pluginManagement>
@@ -77,16 +70,14 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>4.2.0</version>
+                    <version>1.4.3</version>
                     <configuration>
                         <archive>
                             <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                            <manifestEntries>
-                               <Automatic-Module-Name>java.xml.bind</Automatic-Module-Name>
-                            </manifestEntries>
                         </archive>
                         <instructions>
                             <_noee>true</_noee>
+                            <Automatic-Module-Name>java.xml.bind</Automatic-Module-Name>
                             <Bundle-Version>${project.version}</Bundle-Version>  <!-- 2.2.99.bnull -->
                             <Bundle-Description>
                                 Jakarta XML Binding API ${spec.version} Design Specification
